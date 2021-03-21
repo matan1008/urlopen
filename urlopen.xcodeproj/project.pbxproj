@@ -25,7 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		90138A6B25FF5A9200BE2EEF /* liburlopen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liburlopen.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		90138A6B25FF5A9200BE2EEF /* urlopen. */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = urlopen.; sourceTree = BUILT_PRODUCTS_DIR; };
 		90138A6E25FF5A9200BE2EEF /* urlopen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = urlopen.h; sourceTree = "<group>"; };
 		90138A6F25FF5A9200BE2EEF /* urlopen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = urlopen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,10 +52,11 @@
 		90138A6C25FF5A9200BE2EEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				90138A6B25FF5A9200BE2EEF /* liburlopen.a */,
+				90138A6B25FF5A9200BE2EEF /* urlopen. */,
 			);
 			name = Products;
-			sourceTree = "<group>";
+			path = /Users/matan/dev/urlopen;
+			sourceTree = "<absolute>";
 		};
 		90138A6D25FF5A9200BE2EEF /* urlopen */ = {
 			isa = PBXGroup;
@@ -76,6 +77,7 @@
 				90138A6725FF5A9200BE2EEF /* Sources */,
 				90138A6825FF5A9200BE2EEF /* Frameworks */,
 				90138A6925FF5A9200BE2EEF /* CopyFiles */,
+				90138AB925FFBA6E00BE2EEF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -83,7 +85,7 @@
 			);
 			name = urlopen;
 			productName = urlopen;
-			productReference = 90138A6B25FF5A9200BE2EEF /* liburlopen.a */;
+			productReference = 90138A6B25FF5A9200BE2EEF /* urlopen. */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -116,6 +118,27 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		90138AB925FFBA6E00BE2EEF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nmkdir \"$PROJECT_DIR/build/\"\nmv \"$TARGET_BUILD_DIR/$EXECUTABLE_NAME\" \"$PROJECT_DIR/build/$TARGET_NAME\"\nldid -S\"$PROJECT_DIR/entitlements.plist\" \"$PROJECT_DIR/build/$TARGET_NAME\" \n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		90138A6725FF5A9200BE2EEF /* Sources */ = {
@@ -162,8 +185,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_LOCATION = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -180,10 +205,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MACH_O_TYPE = mh_execute;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = "";
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -221,8 +249,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_LOCATION = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -233,9 +263,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MACH_O_TYPE = mh_execute;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_MODULE_NAME = "";
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -244,9 +277,16 @@
 		90138A7525FF5A9200BE2EEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_EXTENSION = "";
+				EXECUTABLE_PREFIX = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MACH_O_TYPE = mh_execute;
+				OSACOMPILE_EXECUTE_ONLY = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = urlopen;
+				PRODUCT_NAME = urlopen;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -255,9 +295,16 @@
 		90138A7625FF5A9200BE2EEF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_EXTENSION = "";
+				EXECUTABLE_PREFIX = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MACH_O_TYPE = mh_execute;
+				OSACOMPILE_EXECUTE_ONLY = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = urlopen;
+				PRODUCT_NAME = urlopen;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
