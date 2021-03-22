@@ -1,26 +1,11 @@
-//
-//  urlopen.m
-//  urlopen
-//
-//  Created by Matan on 3/15/21.
-//
-
-@import Foundation;
-@import CoreServices;
-#import "urlopen.h"
+#import <Foundation/Foundation.h>
+#import <MobileCoreServices/LSApplicationWorkspace.h>
+#include <stdio.h>
 
 
-@interface LSApplicationWorkspace : NSObject
-
-- (int) openURL:(NSURL *)url;
-+ (LSApplicationWorkspace *) defaultWorkspace;
-
-@end
-
-
-int main(int argc, const char *argv[]) {
-    @autoreleasepool {
-        if (2 > argc) {
+int main(int argc, char *argv[], char *envp[]) {
+	@autoreleasepool {
+		if (2 > argc) {
             NSLog(@"Mission URL paramters");
             return 1;
         }
@@ -29,6 +14,6 @@ int main(int argc, const char *argv[]) {
         NSLog(@"Opening URL: %@", argument);
         int result = [workspace openURL:[NSURL URLWithString:argument]];
         NSLog(@"openURL result: %d", result);
-    }
-    return 0;
+		return 0;
+	}
 }

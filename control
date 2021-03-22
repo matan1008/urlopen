@@ -1,0 +1,9 @@
+Package: com.cyber.urlopen
+Name: urlopen
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome tool of some sort!!
+Maintainer: Matan
+Author: Matan
+Section: System
+Tag: role::hacker

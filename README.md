@@ -10,12 +10,12 @@ In order to build the project, git clone it:
 git clone git@github.com:matan1008/urlopen.git
 ```
 
-Then just open it with Xcode and build it.
-The product will be written to build/urlopen
+Then just build it with theos and install it.
+
 
 # Usage
 
-To run urlopen copy it to `/usr/bin` on your jailbroken device and run it with the url you want to open:
+To run urlopen run it with the url you want to open:
 
 ```sh
 /usr/bin/urlopen https://www.google.com
